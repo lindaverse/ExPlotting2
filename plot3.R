@@ -34,13 +34,13 @@ totalEmissionsBaltimoreByYearAndType <- transform(totalEmissionsBaltimoreByYearA
 
 #Creates a barplot and outputs it to a PNG file with a width of 480 pixels and a height of 480 pixels. 
 png("plot3.png", width=720, height=480)
-qplot(x=Year, 
+print(qplot(x=Year, 
       y=Emissions, 
       fill=Type, 
       data=totalEmissionsBaltimoreByYearAndType, 
       geom="bar", 
       stat="identity", 
       position="dodge", 
-      facets = . ~ Type)
+      facets = . ~ Type))
 dev.off()
 
