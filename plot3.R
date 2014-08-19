@@ -19,7 +19,7 @@ classificationCodeTable <- data.table(classificationCodeTable)
 #Extract only rows relating to Baltimore.
 baltimoreData <- emissionsData[emissionsData$fips == "24510",] 
 
-#Look up data point types.
+#Lookup data point types.
 mergedData <- merge(baltimoreData, classificationCodeTable, by=c("SCC"))
 
 #Find total emissions by year and type.
@@ -32,7 +32,7 @@ totalEmissionsBaltimoreByYearAndType <- rename(totalEmissionsBaltimoreByYearAndT
 #Transform year to a factor variable.
 totalEmissionsBaltimoreByYearAndType <- transform(totalEmissionsBaltimoreByYearAndType, Year = factor(Year))
 
-#Creates a barplot and outputs it to a PNG file with a width of 480 pixels and a height of 480 pixels. 
+#Creates a barplot and outputs it to a PNG file with a width of 720 pixels and a height of 480 pixels. 
 png("plot3.png", width=720, height=480)
 print(qplot(x=Year, 
       y=Emissions, 
