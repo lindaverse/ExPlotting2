@@ -39,7 +39,7 @@ print(ggplot(coalCombustionTotalYearlyEmissions,
                   fill = Sector)) + 
               geom_bar(stat = "identity") +
               ylab("Emissions (millions of tons)") +
-              ggtitle("Emissions from coal combustion-related sources") +
+              ggtitle(expression("PM"[2.5]*" emissions from coal combustion-related sources")) +
               scale_fill_discrete(labels = c("Comm/Institutional", 
                                              "Electric Generation", 
                                              "Industrial Boilers, ICEs")))

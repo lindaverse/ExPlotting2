@@ -41,6 +41,7 @@ print(qplot(x=Year,
       geom="bar", 
       stat="identity", 
       position="dodge", 
-      facets = . ~ Type))
+      facets = . ~ Type,
+      ylab=expression("PM"[2.5]*" emissions")))
 dev.off()
 
