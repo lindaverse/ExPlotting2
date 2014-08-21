@@ -39,10 +39,10 @@ baltimoreMotorVehicleYearlyEmissions <- transform(baltimoreMotorVehicleYearlyEmi
 png("plot5.png", width=600, height=600)
 print(ggplot(baltimoreMotorVehicleYearlyEmissions,
              aes(x = Year, 
-                 y = Emissions/1000, 
+                 y = Emissions, 
                  fill = Sector)) + 
         geom_bar(stat = "identity") +
-        ylab("Emissions (thousands of tons)") +
+        ylab("Emissions (tons)") +
         ggtitle(expression("PM"[2.5]*" emissions from motor vehicles in Baltimore")) +
         scale_fill_discrete(labels = c("Diesel heavy duty vehicles", 
                                      "Diesel light duty vehicles", 
