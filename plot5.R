@@ -35,7 +35,7 @@ baltimoreMotorVehicleYearlyEmissions <- rename(baltimoreMotorVehicleYearlyEmissi
 #Transform year to factor variable.
 baltimoreMotorVehicleYearlyEmissions <- transform(baltimoreMotorVehicleYearlyEmissions, Year = factor(Year))
 
-#Creates a barplot and outputs it to a PNG file with a width of 480 pixels and a height of 480 pixels.
+#Create a barplot and output it to a PNG file with a width of 600 pixels and a height of 600 pixels.
 png("plot5.png", width=600, height=600)
 print(ggplot(baltimoreMotorVehicleYearlyEmissions,
              aes(x = Year, 

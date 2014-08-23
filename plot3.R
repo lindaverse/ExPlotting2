@@ -32,7 +32,7 @@ totalEmissionsBaltimoreByYearAndType <- rename(totalEmissionsBaltimoreByYearAndT
 #Transform year to a factor variable.
 totalEmissionsBaltimoreByYearAndType <- transform(totalEmissionsBaltimoreByYearAndType, Year = factor(Year))
 
-#Creates a barplot and outputs it to a PNG file with a width of 720 pixels and a height of 480 pixels. 
+#Create a barplot and output it to a PNG file with a width of 720 pixels and a height of 480 pixels. 
 png("plot3.png", width=720, height=480)
 print(qplot(x=Year, 
       y=Emissions, 
@@ -42,6 +42,6 @@ print(qplot(x=Year,
       stat="identity", 
       position="dodge", 
       facets = . ~ Type,
-      ylab=expression("PM"[2.5]*" emissions")))
+      ylab=expression("PM"[2.5]*" emissions (tons)")))
 dev.off()
 

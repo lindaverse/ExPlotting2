@@ -7,16 +7,14 @@ if (!("summarySCC_PM25.rds" %in% dir() && "Source_Classification_Code.rds" %in% 
   unzip("./projectTwoData")
 }
 
-#Load files into R.
+#Load file containing emissions data into R.
 emissionsData <- readRDS("summarySCC_PM25.rds")
 emissionsData <- data.table(emissionsData)
-#classificationCodeTable <- readRDS("Source_Classification_Code.rds")
-#classificationCodeTable <- data.table(classificationCodeTable)
 
-#Grouping by year and summing emissions.
+#Group by year and sum emissions.
 totalEmissionsByYear <- emissionsData[, lapply(.SD, sum), by=year, .SDcols=4]
 
-#Creates a barplot and outputs it to a PNG file with a width of 480 pixels and a height of 480 pixels. 
+#Create a barplot and output it to a PNG file with a width of 480 pixels and a height of 480 pixels. 
 png("plot1.png", width=480, height=480)
 options(scipen=10)
 barplot(
@@ -26,5 +24,4 @@ barplot(
   names.arg=totalEmissionsByYear$year, 
   ylab="Emissions (millions of tons)", 
   main=expression("Total PM"[2.5]*" emissions by year"))
-
 dev.off()
