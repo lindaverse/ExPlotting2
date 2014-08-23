@@ -42,6 +42,7 @@ print(qplot(x=Year,
       stat="identity", 
       position="dodge", 
       facets = . ~ Type,
-      ylab=expression("PM"[2.5]*" emissions (tons)")))
+      ylab=expression("PM"[2.5]*" emissions (tons)")) +
+      ggtitle(expression("PM"[2.5]*" emissions by type (Baltimore)")))
 dev.off()
 
