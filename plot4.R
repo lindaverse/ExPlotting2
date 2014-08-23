@@ -35,10 +35,10 @@ coalCombustionTotalYearlyEmissions <- transform(coalCombustionTotalYearlyEmissio
 png("plot4.png", width=600, height=600)
 print(ggplot(coalCombustionTotalYearlyEmissions,
               aes(x = Year, 
-                  y = Emissions/1000000, 
+                  y = Emissions/1000, 
                   fill = Sector)) + 
               geom_bar(stat = "identity") +
-              ylab("Emissions (millions of tons)") +
+              ylab("Emissions (thousands of tons)") +
               ggtitle(expression("PM"[2.5]*" emissions from coal combustion-related sources")) +
               scale_fill_discrete(labels = c("Comm/Institutional", 
                                              "Electric Generation", 
